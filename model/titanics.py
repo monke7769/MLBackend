@@ -6,12 +6,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 import seaborn as sns
-'''
-            # Preprocess the received data
-passenger_df = pd.DataFrame(passenger_data)
-passenger_df['sex'] = passenger_df['sex'].apply(lambda x: 1 if x == 'male' else 0)
-passenger_df['alone'] = passenger_df['alone'].apply(lambda x: 1 if x else 0)
-'''
+
         # Load the titanic dataset
 titanic_data = sns.load_dataset('titanic')
 td = titanic_data
@@ -44,13 +39,13 @@ dt.fit(X_train, y_train)
 
         # Prepare response
 passenger = pd.DataFrame({
-    'name': ['John Mortensen'],
-    'pclass': [2], # 2nd class picked as it was median, bargains are my preference, but I don't want to have poor accomodations
-    'sex': ['male'],
+    'name': ['Mary Marrry'],
+    'pclass': [1], # 2nd class picked as it was median, bargains are my preference, but I don't want to have poor accomodations
+    'sex': ['female'],
     'age': [64],
     'sibsp': [1], # I usually travel with my wife
     'parch': [1], # currenly I have 1 child at home
-    'fare': [16.00], # median fare picked assuming it is 2nd class
+    'fare': [83.00], # median fare picked assuming it is 2nd class
     'embarked': ['S'], # majority of passengers embarked in Southampton
     'alone': [False] # travelling with family (spouse and child))
 })
